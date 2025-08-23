@@ -18,6 +18,14 @@ config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 
 project/assembly_name="Vizsga Játék"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "blue",
+"res://Scenes/": "orange",
+"res://Scripts/": "purple"
+}
+
 [input]
 
 move_left={
