@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 public partial class Inventory : ItemList
 {
@@ -7,24 +8,101 @@ public partial class Inventory : ItemList
 	[Export] Texture2D blankIcon;
 
 	private Item[] items;
+	
+	
+	public override void _Process(double delta)
+	{
+		
+		if (Input.IsActionJustPressed("ui_inventory"))
+			Visible = !Visible;
+	}
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		//Alapértelmezésben rejtve van az inventory
+		Visible = false;
+
 		items = new Item[inventorySize];
 
 		for (int i = 0; i < inventorySize; i++)
 		{
 			AddItem(" ", blankIcon);
 		}
+
+		ItemClicked += OnInventoryItemClicked;
 	}
+	//Tárgy hozzáadása az inventoryhoz
 	public bool AddInventoryItem(Item item)
 	{
 		if (item == null || item.Qty <= 0) return false;
+
 		bool couldPickup = AddStackableItem(item);
+
+		if (item.Qty <= 0) return true;
+
+		//Ha nem halmozható a tárgy, vagy nem fért el a meglévő stackekben, akkor új helyre tesszük
+		for (int i = 0; i < inventorySize; i++)
+		{
+			if (items[i] != null) continue;
+			items[i] = item;
+			SetItemIcon(i, item.Icon);
+
+			if (item.MaxQty > 1)
+			{
+				SetItemText(i, item.Qty.ToString());
+			}
+			return true;
+		}
+		return couldPickup;
 	}
 
-	//Halmozható tárgyak esetén
+		//Tárgy eltávolítása az inventoryból
+	public void RemoveInventoryItem(int index)
+	{
+		if (index < 0 || index >= inventorySize) return;
+		items[index] = null;
+		SetItemIcon(index, blankIcon);
+		SetItemText(index, " ");
+	}
+		//Tárgy lekérése az inventoryból
+	public Item GetInventoryItem(int index)
+	{
+		if (index < 0 || index >= inventorySize) return null;
+
+		return items[index];
+	}
+
+	private void OnInventoryItemClicked(long index, Vector2 pos, long mouseButtonIndex)
+	{
+		if (mouseButtonIndex == 2) //Jobb klikk
+		{
+			Item item = GetInventoryItem((int)index);
+
+			if (item == null)
+			{
+				GD.Print("Nincs tárgy a kijelölt helyen.");
+				return;
+			}
+
+			RemoveInventoryItem((int)index);
+
+			GD.Print($"Eldobtál { item.Qty}  {item.Name}.");
+		}
+		else if (mouseButtonIndex == 1) //Bal klikk
+		{
+			Item item = GetInventoryItem((int)index);
+
+			if (item == null)
+			{
+				GD.Print("Nincs tárgy a kijelölt helyen.");
+				return;
+			}
+			GD.Print($"A {item.Name} nevű tárgyból van {item.Qty} db összesen.");
+		}
+	}
+
+		//Halmozható tárgyak esetén
 	private bool AddStackableItem(Item item)
 	{
 		//Megpróbáljuk a meglévő stackekbe rakni

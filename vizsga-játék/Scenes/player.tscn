@@ -125,8 +125,8 @@ script = ExtResource("1_cvnsp")
 position = Vector2(28, 10)
 scale = Vector2(0.987904, 0.949519)
 sprite_frames = SubResource("SpriteFrames_aqk3a")
-animation = &"Down"
-frame_progress = 0.332731
+animation = &"Up"
+frame_progress = 0.802134
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(28, 16)

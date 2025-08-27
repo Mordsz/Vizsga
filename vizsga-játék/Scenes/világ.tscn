@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg1xfircpg1q5"]
+[gd_scene load_steps=10 format=3 uid="uid://cg1xfircpg1q5"]
 
 [ext_resource type="Texture2D" uid="uid://8h7j1bb5opwf" path="res://Assets/Terrain/forest_demo_terrain.png" id="1_g3wg5"]
 [ext_resource type="Texture2D" uid="uid://bayfinqu1ahay" path="res://Assets/Terrain/forest_demo_objects.png" id="2_g58p2"]
 [ext_resource type="PackedScene" uid="uid://dg48s6q0tsok7" path="res://Scenes/player.tscn" id="3_bmkdx"]
 [ext_resource type="Script" uid="uid://cfwu5f4c5x7hs" path="res://Scripts/Inventory/Inventory.cs" id="4_5qgps"]
+[ext_resource type="Texture2D" uid="uid://5i3vxyfxkt46" path="res://Assets/Items/UresEszkoz.png" id="5_85pfc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g58p2"]
 texture = ExtResource("1_g3wg5")
@@ -214,16 +215,24 @@ polygon = PackedVector2Array(-222, -8, -257, -7, -263, -14, -264, -31, -253, -40
 script = SubResource("CSharpScript_bmkdx")
 
 [node name="ItemList" type="ItemList" parent="InventoryUI"]
-offset_left = 4.0
-offset_top = 3.0
-offset_right = 128.0
-offset_bottom = 67.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -125.0
+offset_right = 250.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
 allow_rmb_select = true
 allow_search = false
 auto_height = true
-max_columns = 4
+max_columns = 8
 same_column_width = true
 fixed_column_width = 55
 icon_mode = 0
-fixed_icon_size = Vector2i(50, 50)
 script = ExtResource("4_5qgps")
+inventorySize = 24
+blankIcon = ExtResource("5_85pfc")
