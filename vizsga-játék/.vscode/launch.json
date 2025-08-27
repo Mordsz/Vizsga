@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "C:/Users/Lenovo/Documents/Suli és gyakorlat 2025/VizsgaRemek/vizsga-játék",
+            "program": "C:/Users/Lenovo/Downloads/Godot/Godot_v4.4.1-stable_mono_win64",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopAtEntry": false,

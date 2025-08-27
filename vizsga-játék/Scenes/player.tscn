@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dg48s6q0tsok7"]
+[gd_scene load_steps=16 format=3 uid="uid://dg48s6q0tsok7"]
 
 [ext_resource type="Texture2D" uid="uid://ekmceij7we3a" path="res://Assets/Player/Turtle.png" id="1_61lih"]
 [ext_resource type="Script" uid="uid://dyth676okjtcf" path="res://Scripts/player/Player.cs" id="1_cvnsp"]
@@ -6,10 +6,6 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_cdil5"]
 atlas = ExtResource("1_61lih")
 region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tfsyo"]
-atlas = ExtResource("1_61lih")
-region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rf7nh"]
 atlas = ExtResource("1_61lih")
@@ -56,9 +52,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cdil5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tfsyo")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rf7nh")
@@ -133,6 +126,7 @@ position = Vector2(28, 10)
 scale = Vector2(0.987904, 0.949519)
 sprite_frames = SubResource("SpriteFrames_aqk3a")
 animation = &"Down"
+frame_progress = 0.332731
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(28, 16)

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bpad3826obt4u"]
+
+[ext_resource type="Texture2D" uid="uid://cxh4lyegusq68" path="res://Assets/Items/Fa kéreg.png" id="1_hj57a"]
+[ext_resource type="Script" uid="uid://phnj1idawv0n" path="res://Scripts/ItemData/ItemData.cs" id="1_kck5c"]
+
+[resource]
+script = ExtResource("1_kck5c")
+Name = "Fa kéreg"
+Description = "Elfogyasztásával vissza töltöd az életerődet."
+Type = 0
+Texture = ExtResource("1_hj57a")
