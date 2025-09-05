@@ -1,0 +1,37 @@
+-- Adatbázis létrehozása
+CREATE DATABASE IF NOT EXISTS jatek_db
+  DEFAULT CHARACTER SET utf8mb4
+  COLLATE utf8mb4_general_ci;
+
+USE jatek_db;
+
+-- 1. Tábla: User
+CREATE TABLE User (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    profilkep VARCHAR(255),          -- pl. kép elérési útja
+    nev VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    jelszo VARCHAR(255) NOT NULL     -- hash-elt jelszó tárolására
+);
+
+-- 2. Tábla: Scores
+CREATE TABLE Scores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    pontszam INT DEFAULT 0,
+    szint INT DEFAULT 1,
+    FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE CASCADE
+);
+
+-- 3. Tábla: Patchnotes
+CREATE TABLE Patchnotes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    verzio VARCHAR(20) NOT NULL,     -- pl. "v1.0.1"
+    ujdonsagok TEXT NOT NULL,        -- leírás a frissítésről
+    datum TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+!!!!!!!!!!!!
+USer-t átkell írni felhasznalo-ra
