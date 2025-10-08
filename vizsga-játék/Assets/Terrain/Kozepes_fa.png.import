@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8h7j1bb5opwf"
-path="res://.godot/imported/forest_demo_terrain.png-97017f88fb198b5593f3b788d5fd709e.ctex"
+uid="uid://bpx66juc7hew4"
+path="res://.godot/imported/Kozepes_fa.png-7f3f219653a0cf7622c06d146d63da30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Terrain/forest_demo_terrain.png"
-dest_files=["res://.godot/imported/forest_demo_terrain.png-97017f88fb198b5593f3b788d5fd709e.ctex"]
+source_file="res://Assets/Terrain/Kozepes_fa.png"
+dest_files=["res://.godot/imported/Kozepes_fa.png-7f3f219653a0cf7622c06d146d63da30.ctex"]
 
 [params]
 

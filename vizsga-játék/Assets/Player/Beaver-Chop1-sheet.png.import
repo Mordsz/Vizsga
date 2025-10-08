@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ekmceij7we3a"
-path="res://.godot/imported/Turtle.png-00964f9b2802687f455ccc6c530857b3.ctex"
+uid="uid://b0bmc5t647vip"
+path="res://.godot/imported/Beaver-Chop1-sheet.png-fffbd58307da6534be9a64ef9a037452.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Turtle.png"
-dest_files=["res://.godot/imported/Turtle.png-00964f9b2802687f455ccc6c530857b3.ctex"]
+source_file="res://Assets/Player/Beaver-Chop1-sheet.png"
+dest_files=["res://.godot/imported/Beaver-Chop1-sheet.png-fffbd58307da6534be9a64ef9a037452.ctex"]
 
 [params]
 
