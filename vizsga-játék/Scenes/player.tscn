@@ -310,12 +310,11 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sscpr"]
-size = Vector2(17, 10)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t5aa"]
+size = Vector2(17, 8.75)
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
-collision_layer = 2
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -325,8 +324,8 @@ sprite_frames = SubResource("SpriteFrames_aqk3a")
 animation = &"Down"
 
 [node name="CollisonShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.290304, -0.211544)
-shape = SubResource("RectangleShape2D_sscpr")
+position = Vector2(-1.5, 0.375)
+shape = SubResource("RectangleShape2D_6t5aa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(6, 6)
+zoom = Vector2(5.5, 5.5)

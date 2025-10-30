@@ -5,20 +5,15 @@ public partial class Player : CharacterBody2D
 {
 	public const float Speed = 80.0f;
 
-	// Area2D -> Fog collison
-	private Area2D Teeth;
+	//Fa gyűjtés
+	public int WoodCount { get; private set; } = 0;
 
-	public override void _Ready()
-	{
-
-	}
 
 	private string lastDirection = "Down"; // utolsó nézésirány
+
+	//Mozgás és animáció
 	public override void _PhysicsProcess(double delta)
 	{
-
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
 		Vector2 direction = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 		Velocity = direction * Speed;
 		MoveAndSlide();
@@ -91,5 +86,10 @@ public partial class Player : CharacterBody2D
 			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play();
 		}
 
+	}
+	public void AddWood(int amount)
+	{
+		WoodCount += amount;
+		GD.Print($"Fa gyűjtve! Összes fa: {WoodCount}");
 	}
 }

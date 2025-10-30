@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://duo6b40w1ifyf"]
+
+[ext_resource type="Texture2D" uid="uid://c7c38npu0blvv" path="res://Assets/Terrain/Farong.png" id="1_fxh2w"]
+[ext_resource type="Texture2D" uid="uid://bv8wdu4jryvyu" path="res://Assets/Terrain/Kis_fa.png" id="2_5tjy6"]
+[ext_resource type="Texture2D" uid="uid://debvm6di7qcb5" path="res://Assets/Terrain/Kis_fa_v2.png" id="3_0xll1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x28o5"]
+size = Vector2(76.5, 46.5)
+
+[node name="Dam" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 7)
+rotation = 2.56389
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("1_fxh2w")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(4, -11)
+scale = Vector2(0.291429, 0.296875)
+texture = ExtResource("1_fxh2w")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+rotation = -1.40499
+scale = Vector2(0.5, 1)
+texture = ExtResource("2_5tjy6")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(1, -8)
+rotation = 1.07512
+scale = Vector2(0.540816, 1)
+texture = ExtResource("2_5tjy6")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(1, -3)
+rotation = -3.80656
+scale = Vector2(0.5, 1)
+texture = ExtResource("3_0xll1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(5, -16)
+rotation = -3.07876
+scale = Vector2(0.437035, 0.494883)
+skew = -0.53794
+texture = ExtResource("1_fxh2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.75, -4.25)
+shape = SubResource("RectangleShape2D_x28o5")

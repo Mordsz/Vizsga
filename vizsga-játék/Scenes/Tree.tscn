@@ -1,15 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhs6akektmknt"]
+[gd_scene load_steps=4 format=3 uid="uid://c4msr4c4kakiv"]
 
 [ext_resource type="Texture2D" uid="uid://b7v82a1oguyh8" path="res://Assets/Terrain/assets.png" id="1_gtca3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itkj8"]
 atlas = ExtResource("1_gtca3")
-region = Rect2(16, 328, 96, 136)
+region = Rect2(40, 432, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtca3"]
+atlas = ExtResource("1_gtca3")
+region = Rect2(16, 328, 104, 112)
 
 [node name="Kozepes_fa" type="Sprite2D"]
 texture = SubResource("AtlasTexture_itkj8")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(5, -72)
+texture = SubResource("AtlasTexture_gtca3")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-15, 66, -8, 56, -2, 44, 0, 36, 5, 36, 5, 45, 7, 55, 13, 65, 7, 66, 1, 62)
+position = Vector2(0, -53)
+polygon = PackedVector2Array(-16, 69, -12, 57, -6, 51, -4, 44, -1, 36, 7, 36, 6, 45, 8, 55, 12, 58, 14, 67, 6, 67, 1, 63)
