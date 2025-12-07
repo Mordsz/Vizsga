@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — Példa</title>
+  <meta name="description" content="Egyszerű egyfájlos blog (demo).">
+  <link rel="stylesheet" href="/Css/blog.css">
+
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      
+    <div class="container nav" role="navigation" aria-label="Fő navigáció">
+      <div class="brand" aria-hidden="true">
+        <div class="logo">F</div>
+        <div>
+          <div style="font-size:0.95rem">Főoldal</div>
+          <div style="font-size:0.75rem;color:var(--muted);margin-top:2px">Példa sablon</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#rolunk">Rólunk</a></li>
+          <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+          <li><a href="#kapcsolat">Kapcsolat</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="fooldal.html">Fő oldal</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+    <div class="grid">
+      <!-- MAIN LIST / POST VIEW -->
+      <section id="main" class="card" aria-live="polite">
+
+        <!-- LIST VIEW -->
+        <div id="listView">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+            <h2 style="margin:0">Legfrissebb bejegyzések</h2>
+            <div class="meta" id="count">0 bejegyzés</div>
+          </div>
+
+          <div id="posts"></div>
+
+          <div id="noResults" class="search-empty hidden">Nincs találat.</div>
+        </div>
+
+
+
+
+        <!-- SINGLE POST VIEW -->
+        <article id="postView" class="hidden post-full">
+          <button class="btn ghost" id="backBtn" aria-label="Vissza a listához">← Vissza</button>
+          <h1 id="postTitle"></h1>
+          <div class="meta" id="postMeta"></div>
+          <div class="tags" id="postTags" aria-hidden="true"></div>
+          <div class="content" id="postContent"></div>
+
+          <section id="commentsSection" style="margin-top:18px">
+            <h3>Kommentek</h3>
+            <div id="commentsContainer"></div>
+
+            <div style="margin-top:10px">
+              <h4>Írj kommentet</h4>
+              <form id="commentForm" onsubmit="event.preventDefault(); addComment();">
+                <label>Név<input type="text" id="commentName" required></label>
+                <label>E-mail (nem kötelező)<input type="email" id="commentEmail"></label>
+                <label>Üzenet<textarea id="commentText" rows="4" required></textarea></label>
+                <div style="margin-top:8px">
+                  <button class="btn" type="submit">Küldés</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </article>
+      </section>
+
+ 
+      <!-- SIDEBAR -->
+      <aside class="card" aria-label="Oldalsáv">
+        <div>
+          <h3>Szűrők</h3>
+          <div style="margin-top:8px">
+            <strong>Címkék</strong>
+            <div id="tagList" style="margin-top:8px"></div>
+          </div>
+
+          <div style="margin-top:16px">
+            <strong>Gyors elérés</strong>
+            <div style="margin-top:8px">
+              <span class="pill" id="allBtn">Összes</span>
+              <span class="pill" id="latestBtn">Legfrissebb</span>
+            </div>
+          </div>
+
+          <div style="margin-top:16px">
+            <h4>Rólunk</h4>
+            <p class="meta">Ez csak egy egyszerű, egyfájlos blog demo. A bejegyzések és a kommentek helyben tárolódnak (localStorage).</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      &copy; <span id="year"></span> Saját Blog — Minden jog fenntartva.
+    </footer>
+  </div>
+
+  <script src="blog.js"></script>
+</body>
+</html>

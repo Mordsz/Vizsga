@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Főoldal</title>
+  <meta name="description" content="Egy egyszerű, modern főoldal sablon (magyar).">
+  <link rel="stylesheet" href="/Css/fooldal.css">
+</head>
+<body>
+  
+  <header>
+    <div class="container nav" role="navigation" aria-label="Fő navigáció">
+      <div class="brand" aria-hidden="true">
+        <div class="logo">F</div>
+        <div>
+          <div style="font-size:0.95rem">Főoldal</div>
+          <div style="font-size:0.75rem;color:var(--muted);margin-top:2px">Példa sablon</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="fooldal.html">Fő oldal</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="card">
+        <h1 id="hero-heading">Üdvözlünk a weboldalon — modern & letisztult</h1>
+        <p class="lead">Ez egy egyszerű, reszponzív főoldal sablon. Használd kiindulópontként: módosítsd a színeket, szövegeket és a struktúrát a saját igényeid szerint.</p>
+
+        <div class="cta-row">
+          <button class="btn" id="primaryAction">Kezdd el</button>
+          <a class="btn secondary" href="#rolunk">Tudj meg többet</a>
+        </div>
+
+        <div class="features" aria-hidden="false">
+          <div class="feature">
+            <div style="font-size:20px;font-weight:800">⚡</div>
+            <h3>Gyors</h3>
+            <p>Optimalizált, könnyen testreszabható felépítés.</p>
+          </div>
+          <div class="feature">
+            <div style="font-size:20px;font-weight:800">🔒</div>
+            <h3>Biztonság</h3>
+            <p>Alap meta- és accessibility beállítások.</p>
+          </div>
+          <div class="feature">
+            <div style="font-size:20px;font-weight:800">🎨</div>
+            <h3>Reszponzív</h3>
+            <p>Mobilra és asztalira egyaránt jól néz ki.</p>
+          </div>
+        </div>
+
+        <div class="cards-grid" style="margin-top:18px">
+          <div class="card" style="padding:16px">
+            <strong>Friss hírek</strong>
+            <p class="meta" style="margin-top:8px">Nincs új bejegyzés — cseréld ki saját tartalomra.</p>
+          </div>
+          <div class="card" style="padding:16px">
+            <strong>Gyors linkek</strong>
+            <p class="meta" style="margin-top:8px">Portfólió • Szolgáltatások • Kapcsolat</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card" aria-label="Oldalsáv">
+        <div class="panel-title">
+          <div>
+            <strong>Kapcsolat</strong>
+            <div class="meta">Nyitvatartás: H–P, 9:00–17:00</div>
+          </div>
+          <div style="font-size:0.8rem;color:var(--muted)">Segítség</div>
+        </div>
+
+        <div style="margin-top:14px">
+          <p class="meta">Cím: Példa utca 12, Budapest</p>
+          <p class="meta" style="margin-top:8px">E-mail: <a href="mailto:info@pelda.hu" style="color:inherit;text-decoration:underline">info@pelda.hu</a></p>
+        </div>
+
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.03);margin:18px 0;border-radius:1px" />
+
+        <div>
+          <strong>Közösség</strong>
+          <p class="meta" style="margin-top:8px">Csatlakozz a közösségünkhöz: Discord / Facebook / Instagram</p>
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn secondary" href="#" aria-label="Discord">Discord</a>
+            <a class="btn secondary" href="#" aria-label="Facebook">Facebook</a>
+            <a class="btn secondary" href="#" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="rolunk" style="margin-top:36px">
+      <div class="card">
+        <h2>Rólunk</h2>
+        <p class="lead" style="margin-top:10px">Rövid bemutatkozó: itt írhatod le, mivel foglalkoztok, mi az értéketek és miért érdemes hozzátok fordulni.</p>
+
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <div style="flex:1;min-width:220px">
+            <strong>Missziónk</strong>
+            <p class="meta" style="margin-top:6px">Példa üzenet: kiváló minőségű oktatás és szolgáltatás biztosítása.</p>
+          </div>
+          <div style="flex:1;min-width:220px">
+            <strong>Víziónk</strong>
+            <p class="meta" style="margin-top:6px">Példa üzenet: a diákok és ügyfelek támogatása a fejlődésben.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="szolgaltatasok" style="margin-top:26px">
+      <div class="card">
+        <h2>Szolgáltatások</h2>
+        <p class="lead" style="margin-top:10px">Rövid összefoglaló a nyújtott szolgáltatásokról.</p>
+
+        <ul style="margin-top:12px;color:var(--muted)">
+          <li>Webfejlesztés és karbantartás</li>
+          <li>Oktatás és workshopok</li>
+          <li>Design és arculat</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="kapcsolat" style="margin-top:26px">
+      <div class="card">
+        <h2>Kapcsolat</h2>
+        <p class="lead" style="margin-top:10px">Töltsd ki az alábbi űrlapot, és felvesszük veled a kapcsolatot.</p>
+
+        <form style="margin-top:12px;display:grid;gap:10px" onsubmit="event.preventDefault(); handleSubmit();">
+          <label>
+            <div style="font-weight:700">Név</div>
+            <input id="name" type="text" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+          </label>
+          <label>
+            <div style="font-weight:700">E-mail</div>
+            <input id="email" type="email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+          </label>
+          <label>
+            <div style="font-weight:700">Üzenet</div>
+            <textarea id="message" rows="4" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+          </label>
+
+          <div style="display:flex;gap:8px;align-items:center">
+            <button class="btn" type="submit">Küldés</button>
+            <button type="reset" class="btn secondary">Töröl</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        &copy; <span id="year"></span> Minden jog fenntartva. • Készült példa sablon alapján.
+      </div>
+    </footer>
+  </main>
+    
+  <script src="fooldal.css"></script>
+
+</body>
+</html>

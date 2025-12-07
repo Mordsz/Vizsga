@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Regisztráció</title>
+  <link rel="stylesheet" href="/Css/regi.css">
+
+</head>
+<body>
+  <section class="card" aria-labelledby="title">
+    <div class="info">
+      <div class="brand">
+        <div class="logo">RS</div>
+        <div>
+          <h1 id="title">Regisztráció</h1>
+          <p class="lead">Hozz létre fiókot a hozzáféréshez. Töltsd ki az alábbi mezőket.</p>
+        </div>
+      </div>
+
+      <form id="regForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="first">Keresztnév</label>
+            <input id="first" name="first" required autocomplete="given-name" />
+            <div class="helper" data-for="first"></div>
+          </div>
+          <div class="field">
+            <label for="last">Vezetéknév</label>
+            <input id="last" name="last" required autocomplete="family-name" />
+            <div class="helper" data-for="last"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" required autocomplete="email" />
+          <div class="helper" data-for="email"></div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="username">Felhasználónév</label>
+            <input id="username" name="username" required minlength="3" maxlength="30" />
+            <div class="helper" data-for="username"></div>
+          </div>
+          <div class="field">
+            <label for="country">Ország</label>
+            <select id="country" name="country" aria-label="Ország">
+              <option value="HU">Magyarország</option>
+              <option value="DE">Németország</option>
+              <option value="AT">Ausztria</option>
+              <option value="GB">Egyesült Királyság</option>
+              <option value="US">Egyesült Államok</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="password">Jelszó</label>
+            <input id="password" name="password" type="password" required minlength="8" autocomplete="new-password" />
+            <div class="pw-strength" aria-hidden="true"><i id="pwBar" class="pw-weak" style="width:0%"></i></div>
+            <div class="helper" data-for="password">Legalább 8 karakter, szám és nagybetű ajánlott.</div>
+          </div>
+          <div class="field">
+            <label for="confirm">Jelszó ismét</label>
+            <input id="confirm" name="confirm" type="password" required autocomplete="new-password" />
+            <div class="helper" data-for="confirm"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="phone">Telefonszám (opcionális)</label>
+          <input id="phone" name="phone" inputmode="tel" placeholder="+36 20 123 4567" />
+          <div class="helper" data-for="phone"></div>
+        </div>
+
+        <div class="terms">
+          <input type="checkbox" id="termsCheck" required />
+          <label for="termsCheck" class="note small">Elolvastam és elfogadom az <a href="#" style="color:inherit;text-decoration:underline">adatvédelmi szabályzatot</a>.</label>
+        </div>
+
+        <div class="actions">
+          <div class="note small">Már van fiókod? <a href="#" style="color:inherit;text-decoration:underline">Bejelentkezés</a></div>
+          <button class="btn" id="submitBtn" type="submit">Regisztráció</button>
+        </div>
+      </form>
+    </div>
+
+    <aside class="right" aria-hidden="true">
+      <div class="illustr">Üdv a közösségben!</div>
+      <p class="muted">Gyors, biztonságos regisztráció. Később személyre szabhatod fiókod.</p>
+      <div style="height:12px"></div>
+      <div class="center">
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center">A</div>
+        <div style="flex:1">
+          <div style="font-weight:700">Biztonság</div>
+          <div class="muted small">Adatvédelem és erős jelszavak</div>
+        </div>
+      </div>
+          <div style="margin-top:20px">
+        <label for="pfpUpload" style="font-size:14px;color:var(--muted);display:block;margin-bottom:6px">Profilkép feltöltése</label>
+        <input id="pfpUpload" type="file" accept="image/*" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit" />
+        <div id="pfpPreviewContainer" style="margin-top:12px;display:none">
+          <img id="pfpPreview" alt="Előnézet" style="width:96px;height:96px;border-radius:12px;object-fit:cover;border:2px solid rgba(255,255,255,0.12)" />
+        </div>
+      </div>
+    </aside>
+  </section>
+
+    <script src="/Script/regi.js"></script>
+</body>
+</html>
