@@ -1,0 +1,12 @@
+Cím: TidesOfEnvy 
+Téma: videójáték/weboldal
+
+Először szerettünk volna mind a hárman játékot fejleszteni a téma pedig egy fejlődő/waveclearer játék  ahol vannak ellenfelek is és van egy föhős aki egy lovag
+Nehéz volt megtalálni azt a témát amit igazán szerettünk volna, sok más játékötlet is volt a fejünkben, előszőr egy hódról szólt volna a játék, ahol egy gyűjtögetős mechanika lett volna és úgy lehetett volna fejleszteni a gátat illetve a körülöttünk lévő felszereléseket szintén egy wave-ekre osztott játékban.
+A címe pedig The Damn Dam volt, végül elvetettük ezt az ötletet ugyanis szerettünk volna egy komplexebb jobb tematikával rendelkező játékot létrehozni, majd kifutottunk az időből ezért inkább a weblapra tettünk több hangsúlyt, a weboldal egy regisztrációs oldallal egy bloggal, egy patchnotes oldallal van felszerelve
+
+Főoldal, itt lehet regisztrálni illetve megtekinteni a játékról pár információt itt található a címe is a játéknak illetve itt van még a patchnotes rész is ahol az aktuális állását lehet megtekinteni az oldalon, a kódról később.
+
+Patchnotes oldal, Ide tesszük fel a jelenleg kész és javított hibákat és újdonságokat a játékban, itt van az aktuális gamebuild verziója is ahol a jelenlegi legfrissebb állását lehet megtekinteni a játéknak itt lehet megnézni a játék fejlesztési státuszát
+
+Blog, a blog fejlesztők és játékosok közös oldala ahol a felvetéseket illetve tesztelési eredményeket lehet megosztani, külön külön szemszögből itt a fejlesztők is tudnak kommunikálni a játékosokkal és együtt javíthatják a játékot, ez egy amolyan Fal ahova kitesszük a közösségi dolgokat a játékkal kapcsolatban!
