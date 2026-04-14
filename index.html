@@ -1,52 +1,75 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Damn Dam</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TidesOfEnvy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/welcome.css">
+<link rel="icon" href="assets/Logo.png" type="image/png">
 </head>
-<body style="background-image: url(image\ \(1\).webp);">
-  <h1>The Damn Dam</h1>
 
-  <div class="navbar">
-    <a href="#">Home</a>
-    <a href="#">Patch notes</a>
-    <a href="#">FAQ</a>
-    <a href="#">Blog</a>
-    <a href="#">Media</a>
-    <a href="#">Store</a>
-  </div>
+<body>
 
-  <div class="section-container">
-    <div class="video-box">
-      <h3>Trailer</h3>
-      <video controls>
-        <source src="trailer.mp4" type="video/mp4">
-        A böngésződ nem támogatja a videó lejátszását.
-      </video>
+<div class="welcome-nav">
+    <div class="nav-links">
+        <a href="login.html" class="nav-link">Belépés</a>
+        <a href="register.html" class="nav-link">Regisztráció</a>
     </div>
+</div>
 
-    <div class="text-box">
-      <h3>About the Game</h3>
-      <p>“The Damn Dam” is a video game where you, the protagonist, as a beaver, build and protect your dam from predators. Collect, build, evolve and defend to protect your home!</p>
+<div class="site-logo">
+    <img src="assets/Logo.png" alt="TidesOfEnvy Logo" />
+</div>
+    
+<div class="welcome">
+  <div class="welcome-box">
+    <div class="layout-grid" aria-label="Bemutató elrendezés">
+      <section class="grid-card grid-card--text grid-card--story">
+        <p class="grid-eyebrow">Pixel Art Adventure</p>
+        <h1>TidesOfEnvy</h1>
+        <p>A TidesOfEnvy egy tower defense játék, ahol tornyokat használsz, hogy szörnyek ellen harcolj.</p>
+        <p>Fedezd fel a pixelek között rejtőző kalandokat, és készíts stratégiát minden hullámra.</p>
+      </section>
+      <section class="grid-card grid-card--text grid-card--cta">
+        <h3>Készen állsz a védelemre?</h3>
+        <p>Regisztrálj vagy lépj be, hogy menedzseld a tornyokat, fejlessz stratégiát és megvédd a birodalmat.</p>
+        <div class="grid-buttons">
+          <a href="login.html" class="grid-button grid-button--ghost">Belépés</a>
+          <a href="register.html" class="grid-button grid-button--ghost">Regisztráció</a>
+        </div>
+      </section>
     </div>
   </div>
+</div>
 
-  <div class="patch-notes">
-    <h2>Patch Notes</h2>
-    <ul>
-      <li>🐾 Added new beaver animations</li>
-      <li>🌲 Expanded pixel art background</li>
-      <li>⚡ Performance improvements</li>
-    </ul>
+<footer class="welcome-footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Elérhetőségek</h3>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/groups/2454732161625502" target="_blank" class="social-link facebook">
+        <span class="social-icon">f</span>
+        <span class="social-text">Facebook</span>
+      </a>
+      <a href="https://discord.gg/m8BUV99G" target="_blank" class="social-link discord">
+        <span class="social-icon">⛓</span>
+        <span class="social-text">Discord</span>
+      </a>
+      <a href="https://instagram.com" target="_blank" class="social-link instagram">
+        <span class="social-icon">◉</span>
+        <span class="social-text">Instagram</span>
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TidesOfEnvy - Tower Defense</p>
+    </div>
   </div>
+</footer>
 
-  <img src="" alt="Beaver" class="beaver">
-
-  <footer>
-    <p>© 2025 The Damn Dam Project - All Rights Reserved</p>
-  </footer>
+<script src="data/Index.js"></script>
 </body>
 </html>
