@@ -1,0 +1,57 @@
+// Bejelentkezési form kezelése
+document.addEventListener('DOMContentLoaded', function() {
+  const loginForm = document.getElementById('loginForm');
+  const messageBox = document.getElementById('error-message');
+  
+  if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(loginForm);
+      
+      fetch('php/login_process.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Sikeres bejelentkezés - átirányítás a főoldalra
+          window.location.href = 'main.php';
+        } else {
+          // Hiba megjelenítése
+          const messages = {
+            'invalid_credentials': 'Helytelen felhasználónév vagy jelszó.',
+            'missing_fields': 'Mindkét mező kitöltése kötelező.',
+            'invalid_method': 'Hiba történt a feldolgozás során.'
+          };
+          
+          messageBox.textContent = messages[data.error] || 'Ismeretlen hiba történt.';
+          messageBox.style.display = 'block';
+        }
+      })
+      .catch(error => {
+        console.error('Hiba:', error);
+        messageBox.textContent = 'Váratlan hiba történt, próbáld meg később.';
+        messageBox.style.display = 'block';
+      });
+    });
+  }
+  
+  // Jelszó megjelenítés/elrejtés
+  const togglePassword = document.getElementById('togglePassword');
+  const passwordField = document.getElementById('passwordField');
+  
+  if (togglePassword && passwordField) {
+    togglePassword.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        togglePassword.textContent = '👁️‍🗨️';
+      } else {
+        passwordField.type = 'password';
+        togglePassword.textContent = '👁️‍🗨️';
+      }
+    });
+  }
+});

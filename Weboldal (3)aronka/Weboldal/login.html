@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belépés</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/Logo.png" type="image/png">
+</head>
+<body>
+<div class="box login-box">
+  <h2>Belépés</h2>
+
+  <div id="error-message" class="message error" style="display:none;"></div>
+
+  <form id="loginForm" method="POST">
+    <input name="username" placeholder="Felhasználónév" required>
+    <div class="password-wrapper">
+      <input name="password" type="password" placeholder="Jelszó" required id="passwordField">
+      <button type="button" class="toggle-password" id="togglePassword">👁️‍🗨️</button>
+    </div>
+    <button type="submit">Belépés</button>
+  </form>
+</div>
+
+
+<script src="data/Login.js"></script>
+</body>
+</html>

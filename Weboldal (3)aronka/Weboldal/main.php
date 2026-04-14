@@ -1,0 +1,272 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Főoldal</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/Logo.png" type="image/png">
+</head>
+
+<body>
+
+<!-- Audio elem a háttér zenéhez -->
+<audio id="backgroundMusic" loop>
+  <source src="assets/Stone and Heather.mp3" type="audio/mpeg">
+  <source src="assets/Stone and Heather.mp3" type="audio/ogg">
+  Böngésződ nem támogatja az audio elemet.
+</audio>
+
+<div class="nav">
+    <div class="music-controls">
+        <button class="music-toggle-btn" id="musicToggleBtn" title="Zene be/ki">🔊</button>
+        <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="30" title="Hangerő">
+        <span class="volume-display" id="volumeDisplay">30%</span>
+    </div>
+    <div class="nav-title">
+      <img class="nav-title-logo" src="assets/jateklogo.png" alt="TidesOfEnvy">
+    </div>
+    <div class="nav-user">
+      <div class="profile-pic" id="profilePic" style="cursor: pointer; background-size: cover; background-position: center;"></div>
+      <div class="username"><?= htmlspecialchars($_SESSION['user'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></div>
+      <div class="profile-buttons">
+        <?php if (!empty($_SESSION['is_admin'])): ?>
+        <a class="profile-menu-btn admin-link" href="AdminFelulet.php">Admin</a>
+        <?php endif; ?>
+        <div class="profile-menu">
+          <button class="profile-menu-btn" id="profileMenuBtn">Menü</button>
+          <div class="profile-dropdown" id="profileDropdown">
+            <form action="php/logout.php" method="POST" style="margin: 0;">
+              <button type="submit" class="dropdown-btn">Kijelentkezés</button>
+            </form>
+            <form action="php/delete_account.php" method="POST" style="margin: 0;">
+              <button type="submit" class="dropdown-btn delete-btn" onclick="return confirm('Biztosan törlöd a profilodat? Ez nem vonható vissza!');">Profil törlése</button>
+            </form>
+          </div>
+        </div>
+        <button class="profile-menu-btn" id="chatIcon">Üzenetek <span id="requestsNotificationBadge" class="notification-badge" style="display: none;">0</span></button>
+      </div>
+    </div>
+</div>
+
+<main class="main-content">
+  <h2>Üdv a főoldalon!</h2>
+  
+    <!-- Játék Galériája -->
+      <section class="game-gallery-section">
+      <h3>Játék Galériája</h3>
+    
+ <!-- Galériamegjelenítés -->
+<div class="gallery-container">
+
+  <div class="gallery-viewer">
+    <button class="gallery-nav-btn prev-btn" id="prevGalleryBtn">❮</button>
+
+    <div class="gallery-main">
+      <img id="mainGalleryImage" 
+           src="assets/I2PO3A.gif" 
+           alt="Játék képe">
+    </div>
+
+    <button class="gallery-nav-btn next-btn" id="nextGalleryBtn">❯</button>
+  </div>
+
+
+  <!-- Thumbnails -->
+  <div class="gallery-thumbnails" id="galleryThumbnails">
+        <div class="thumbnail" data-index="0">
+          <img src="assets/I2PO3A.gif" alt="Kép 1">
+        </div>
+        <div class="thumbnail" data-index="1">
+          <img src="assets/AaOcvG.gif" alt="Kép 2">
+        </div>
+        <div class="thumbnail" data-index="2">
+          <img src="assets/vqLiej.gif" alt="Kép 3">
+        </div>
+        <div class="thumbnail" data-index="3">
+          <img src="assets/0e3kwL.gif" alt="Kép 4">
+        </div>
+        <div class="thumbnail" data-index="4"> <!-- Kép 4 helyett új kép -->
+          <img src="assets/palya.png" alt="Kép 5">
+        </div>
+        <div class="thumbnail" data-index="5">
+          <img src="assets/Coming%20Soon.png" alt="Coming soon">
+        </div>
+      </div>
+
+  <!-- Képszámláló -->
+  <div class="gallery-counter">
+    <span id="currentImageIndex">1</span> / 
+    <span id="totalImages">7</span>
+  </div>
+
+</div>
+
+    <!-- Játék Leírása -->
+    <div class="game-description">
+      <h4>A Játékról</h4>
+      <p>
+        A TidesOfEnvy egy sötét fantasy világba helyezett, pixel art stílusú tower defense élmény,
+        ahol a birodalom védelme a te kezedben van.
+      </p>
+      <p>
+        Feladatod, hogy a hullámokban érkező ellenfeleket megállítsd tornyok építésével és
+        fejlesztésével. Minden pálya új kihívásokat tartogat: változatos ellenféltípusok,
+        eltérő útvonalak és korlátozott erőforrások teszik próbára a stratégiai gondolkodást.
+      </p>
+      <p>
+        A játékmenet a tervezésre és a folyamatos alkalmazkodásra épül. Kísérletezz
+        toronykombinációkkal, optimalizáld a védelmi vonalakat, és reagálj az egyre erősödő
+        támadásokra. A pályák teljesítése után statisztikák segítik a fejlődést, így tisztán
+        láthatod, hogyan finomíthatod a taktikádat.
+      </p>
+      <p>
+        A projekt célja egy letisztult, mégis kihívást nyújtó játék megalkotása, amely a pixel art
+        látványvilágot modern játékelemekkel ötvözi, és hosszú távon is fenntartja az érdeklődést.
+      </p>
+    </div>
+  </section>
+
+  <!-- Letöltés gomb -->
+  <br>
+  <button id="DownloadBTN">
+    <div class="progress-bar"></div>
+    <a href="https://tidesofenvy.hu//downloads/Launcher.zip" download>Letöltés</a>
+  </button>
+
+</main>
+
+<!-- Chat Panel -->
+<div id="chatPanel" class="chat-panel">
+  <div class="chat-header">
+    <div id="chatTitle">Csevegés</div>
+    <button id="closeChatBtn" class="close-chat-btn">✕</button>
+  </div>
+  
+  <div class="chat-tabs">
+    <button class="chat-tab-btn active" data-tab="friends">Barátok</button>
+    <button class="chat-tab-btn" data-tab="requests">Kérések</button>
+    <button class="chat-tab-btn" data-tab="chat">Csevegés</button>
+  </div>
+
+  <!-- Friends Tab -->
+  <div id="friendsTab" class="chat-tab active">
+    <div class="chat-action-bar">
+      <button id="addFriendBtn" class="add-friend-btn">+ Barát hozzáadása</button>
+    </div>
+    <div id="friendsList" class="friends-list">
+      <div class="loading">Barátok betöltése...</div>
+    </div>
+  </div>
+
+  <!-- Requests Tab -->
+  <div id="requestsTab" class="chat-tab">
+    <div id="friendRequestsList" class="requests-list">
+      <div class="loading">Kérések betöltése...</div>
+    </div>
+  </div>
+
+  <!-- Chat Tab -->
+  <div id="chatTab" class="chat-tab">
+    <div id="chatHeader" class="active-chat-header">Válassz egy barátot</div>
+    <div id="messagesContainer" class="messages-container">
+      <div class="no-chat">Válassz egy barátot a csevegéshez</div>
+    </div>
+    <div class="message-input-area">
+      <textarea id="messageInput" class="message-input" placeholder="Üzenet írása..." rows="3"></textarea>
+      <button id="sendMessageBtn" class="send-message-btn">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Friend Modal -->
+<div id="addFriendModal" class="modal add-friend-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Barát hozzáadása</h2>
+      <span class="close" onclick="document.getElementById('addFriendModal').classList.remove('active')">&times;</span>
+    </div>
+    <form id="addFriendForm">
+      <input type="text" id="usernameInput" name="username" placeholder="Felhasználónév" required>
+      <button type="submit" class="modal-submit-btn">Barátkérelem küldése</button>
+    </form>
+  </div>
+</div>
+
+<!-- Profil Edit Oldal -->
+<div id="profileModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Profilom szerkesztése</h2>
+      <span class="close" id="closeProfileModal">&times;</span>
+    </div>
+    
+    <form id="profileEditForm" enctype="multipart/form-data">
+      <!-- Avatar Upload -->
+      <div class="form-section avatar-section">
+        <h3>Avatar - Profilkép</h3>
+        <div class="avatar-container">
+          <div class="avatar-preview" id="avatarPreview"></div>
+          <div class="avatar-info">
+            <p>Kattints a képre vagy az alábbi gombra a feltöltéshez</p>
+            <label for="avatarInput" class="upload-btn">Kiválasztás</label>
+            <input type="file" id="avatarInput" name="avatar" accept="image/*" style="display: none;">
+            <small>PNG, JPG, GIF | Max 5MB</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Személyes adatok -->
+      <div class="form-section">
+        <h3>Személyes adatok</h3>
+        <input type="text" id="firstName" name="first_name" placeholder="Keresztnév">
+        <input type="text" id="lastName" name="last_name" placeholder="Vezetéknév">
+        <textarea id="profileBio" name="bio" placeholder="Rólad (bio)"></textarea>
+      </div>
+
+      <!-- Email -->
+      <div class="form-section">
+        <h3>Email cím</h3>
+        <input type="email" id="email" name="email" placeholder="Email cím">
+        <small>Az email módosításához jelszódat meg kell adnod!</small>
+        <div class="password-wrapper">
+          <input type="password" id="emailPassword" name="email_password" placeholder="Jelszó az email módosításához">
+          <button type="button" class="toggle-password" id="toggleEmailPassword">👁️‍🗨️</button>
+        </div>
+      </div>
+
+      <!-- Jelszó módosítás -->
+      <div class="form-section">
+        <h3>Jelszó módosítása</h3>
+        <div class="password-wrapper">
+          <input type="password" id="currentPassword" name="current_password" placeholder="Jelenlegi jelszó">
+          <button type="button" class="toggle-password" id="toggleCurrentPassword">👁️‍🗨️</button>
+        </div>
+        <div class="password-wrapper">
+          <input type="password" id="newPassword" name="new_password" placeholder="Új jelszó">
+          <button type="button" class="toggle-password" id="toggleNewPassword">👁️‍🗨️</button>
+        </div>
+        <div class="password-wrapper">
+          <input type="password" id="confirmPassword" name="confirm_password" placeholder="Új jelszó megerősítése">
+          <button type="button" class="toggle-password" id="toggleConfirmPassword">👁️‍🗨️</button>
+        </div>
+        <small>Hagyj üresen, ha nem szeretnéd módosítani!</small>
+      </div>
+
+      <div id="profileMessage" class="message" style="display: none;"></div>
+
+      <button type="submit" class="modal-submit-btn">Mentés</button>
+    </form>
+  </div>
+</div>
+
+<script src="data/Fooldal.js"></script>
+<script src="data/Chat.js"></script>
+<script src="data/Music.js"></script>
+</body>
+</html>
